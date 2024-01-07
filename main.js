@@ -18,22 +18,24 @@ function ProjectAnswer() {
                 question = 2 
             } else {
                 console.log(useAnonPlayer + '     '+  ' su respuesta es la incorrecta :c')
-                question = 0;
+                question = 1
 
             }
                 break;
             case 2:
             let ansTwo = prompt('Pregunta Numero Dos: '+'\n'+useAnonPlayer+'\n  Recuerda que debe precionar A B C D  '+ '  \nEn que año nacio Javascripts\n A) 1998 \n B) 1994 \n C) 2024 \n D) 1995')
-            if (ansTwo.toLocaleLowerCase()==='b') {
+            if (ansTwo.toLocaleLowerCase()==='d') {
                 console.log('Ganaste felicidades '+ '   ' +useAnonPlayer)
-                question = 0
+                question =0
             } else {
                 console.log(useAnonPlayer + '     '+  ' su respuesta es la incorrecta :c')
+                question = 2 
+                 
             }
-                break
-            default:
-                console.log('Fin')
-                question = 1;
+            break
+            
+                default:console.log('Fin')
+                question = 0;
                 break;
         }
     }
