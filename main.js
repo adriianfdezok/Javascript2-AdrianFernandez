@@ -33,7 +33,7 @@ function ProjectAnswer() {
                 break
             default:
                 console.log('Fin')
-                question = 0;
+                question = 1;
                 break;
         }
     }
