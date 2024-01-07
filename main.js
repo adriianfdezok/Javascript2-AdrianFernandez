@@ -24,7 +24,7 @@ function ProjectAnswer() {
                 break;
             case 2:
             let ansTwo = prompt('Pregunta Numero Dos: '+'\n'+useAnonPlayer+'\n  Recuerda que debe precionar A B C D  '+ '  \nEn que año nacio Javascripts\n A) 1998 \n B) 1994 \n C) 2024 \n D) 1995')
-            if (ansTwo.toLocaleLowerCase()==='b') {
+            if (ansTwo.toLocaleLowerCase()==='d') {
                 console.log('Ganaste felicidades '+ '   ' +useAnonPlayer)
                 question = 0
             } else {
