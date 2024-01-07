@@ -32,10 +32,17 @@ function ProjectAnswer() {
                 question = 2 
                  
             }
+<<<<<<< HEAD
             break
             
                 default:console.log('Fin')
                 question = 0;
+=======
+                break
+            default:
+                console.log('Fin')
+                question = 0
+>>>>>>> origin/main
                 break;
         }
     }
