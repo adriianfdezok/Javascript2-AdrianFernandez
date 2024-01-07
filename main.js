@@ -8,7 +8,7 @@ function ProjectAnswer() {
     console.log(useAnonPlayer + '  ' + 'Bienvenido Jugador');
 
     let question = 1;
-
+    
     while (question) {
         switch (question) {
             case 1:
@@ -21,28 +21,22 @@ function ProjectAnswer() {
                 question = 1
 
             }
-                break;
+            break;
             case 2:
-            let ansTwo = prompt('Pregunta Numero Dos: '+'\n'+useAnonPlayer+'\n  Recuerda que debe precionar A B C D  '+ '  \nEn que año nacio Javascripts\n A) 1998 \n B) 1994 \n C) 2024 \n D) 1995')
+                let ansTwo = prompt('Pregunta Numero Dos: '+'\n'+useAnonPlayer+'\n  Recuerda que debe precionar A B C D  '+ '  \nEn que año nacio Javascripts\n A) 1998 \n B) 1994 \n C) 2024 \n D) 1995')
             if (ansTwo.toLocaleLowerCase()==='d') {
-                console.log('Ganaste felicidades '+ '   ' +useAnonPlayer)
-                question =0
+                    console.log('Ganaste felicidades '+ '   ' +useAnonPlayer)
+                    question =2
             } else {
                 console.log(useAnonPlayer + '     '+  ' su respuesta es la incorrecta :c')
-                question = 2 
+                question = 0
                  
             }
-<<<<<<< HEAD
             break
+             
             
                 default:console.log('Fin')
                 question = 0;
-=======
-                break
-            default:
-                console.log('Fin')
-                question = 0
->>>>>>> origin/main
                 break;
         }
     }
