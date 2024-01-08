@@ -7,8 +7,8 @@ function ProjectAnswer() {
     
     console.log(useAnonPlayer + '  ' + 'Bienvenido Jugador');
 
-    let question = 1;
-    
+    let question = 1
+    let attemps = 0
     while (question) {
         switch (question) {
             case 1:
@@ -19,6 +19,11 @@ function ProjectAnswer() {
             } else {
                 console.log(useAnonPlayer + '     '+  ' su respuesta es la incorrecta :c')
                 question = 1
+                attemps++
+                if (attemps >= 2) {
+                    console.log(' ya no tiene mas intentos  ')
+                question = 0 
+                }
 
             }
             break;
@@ -30,6 +35,11 @@ function ProjectAnswer() {
             } else {
                 console.log(useAnonPlayer + '     '+  ' su respuesta es la incorrecta :c')
                 question = 2
+                attemps++
+                if (attemps >= 2) {
+                    console.log(' ya no tiene mas intentos  ')
+                question = 0 
+                }
                  
             }
             break
