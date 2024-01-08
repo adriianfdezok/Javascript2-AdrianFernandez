@@ -1,4 +1,5 @@
 function ProjectAnswer() {
+
     let useAnonPlayer = prompt('Por favor ingrese su nombre');
     
     if (useAnonPlayer === null) {
@@ -9,7 +10,9 @@ function ProjectAnswer() {
 
     let question = 1
     let attemps = 0
-    while (question) {
+    console.log('recuerda que solo tienes 2 intentos')
+    console.log('---------------------------------')
+     while (question) {
         switch (question) {
             case 1:
                 let ansOne = prompt(useAnonPlayer +'  ' +'Recuerda para jugar debes precionar A B C D\nComo es la comparacion estricta de un valor tipo de JavaScript?\n A) == \n B) != \n C) = \n D) !== ');
@@ -28,6 +31,8 @@ function ProjectAnswer() {
             }
             break;
             case 2:
+                console.log('---------------------------------')
+
                 let ansTwo = prompt('Pregunta Numero Dos: '+'\n'+useAnonPlayer+'\n  Recuerda que debe precionar A B C D  '+ '  \nEn que año nacio Javascripts\n A) 1998 \n B) 1994 \n C) 2024 \n D) 1995')
             if (ansTwo.toLocaleLowerCase()==='d') {
                     console.log('Ganaste felicidades '+ '   ' +useAnonPlayer)
@@ -51,4 +56,4 @@ function ProjectAnswer() {
         }
     }
 }
- ProjectAnswer();
+ProjectAnswer();
