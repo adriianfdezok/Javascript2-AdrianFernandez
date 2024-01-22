@@ -1,59 +1,62 @@
-function ProjectAnswer() {
-
-    let useAnonPlayer = prompt('Por favor ingrese su nombre');
-    
-    if (useAnonPlayer === null) {
-        useAnonPlayer = 'Jugador Anonimo';
-    }
-    
-    console.log(useAnonPlayer + '  ' + 'Bienvenido Jugador');
-
-    let question = 1
-    let attemps = 0
-    console.log('recuerda que solo tienes 2 intentos')
-    console.log('---------------------------------')
-     while (question) {
-        switch (question) {
-            case 1:
-                let ansOne = prompt(useAnonPlayer +'  ' +'Recuerda para jugar debes precionar A B C D\nComo es la comparacion estricta de un valor tipo de JavaScript?\n A) == \n B) != \n C) = \n D) !== ');
-            if (ansOne.toLocaleLowerCase()==='a') {
-                console.log('Ganaste felicidades '+ '   ' +useAnonPlayer)
-                question = 2 
-            } else {
-                console.log(useAnonPlayer + '     '+  ' su respuesta es la incorrecta :c')
-                question = 1
-                attemps++
-                if (attemps >= 2) {
-                    console.log(' ya no tiene mas intentos  ')
-                question = 0 
-                }
-
-            }
-            break;
-            case 2:
-                console.log('---------------------------------')
-
-                let ansTwo = prompt('Pregunta Numero Dos: '+'\n'+useAnonPlayer+'\n  Recuerda que debe precionar A B C D  '+ '  \nEn que año nacio Javascripts\n A) 1998 \n B) 1994 \n C) 2024 \n D) 1995')
-            if (ansTwo.toLocaleLowerCase()==='d') {
-                    console.log('Ganaste felicidades '+ '   ' +useAnonPlayer)
-                    question =0
-            } else {
-                console.log(useAnonPlayer + '     '+  ' su respuesta es la incorrecta :c')
-                question = 2
-                attemps++
-                if (attemps >= 2) {
-                    console.log(' ya no tiene mas intentos  ')
-                question = 0 
-                }
-                 
-            }
-            break
-             
-            
-                default:console.log('Fin')
-                question = 0;
-                break;
-        }
+class celular {
+    constructor(id, marca, modelo, stocks, precio) {
+        this.id = id,
+        this.marca = marca,
+        this.modelo = modelo,
+        this.stocks = stocks,
+        this.precio = precio
     }
 }
-ProjectAnswer();
+
+const celular1 = new celular(1, "motorola", "e12", 5, 500000) 
+const celular2 = new celular(2, "samsung", "a4", 6, 800000) 
+const celular3 = new celular(3, "motorola", "e15", 8, 400000) 
+const celular4 = new celular(4, "iPhone", "12 Pro", 10, 1200000) 
+const celular5 = new celular(5, "Xiaomi", "Mi 11", 7, 900000) 
+const celulares = [celular1, celular2, celular3, celular4, celular5] 
+
+function dividir_cuotas(precio, cantidad_cuotas) {
+    const cuota_mensual = precio / cantidad_cuotas 
+    return cuota_mensual 
+}
+
+function buscar(modelo) {
+    const celulares_encontrados = celulares.filter((celular) => celular.modelo === modelo) 
+    return celulares_encontrados 
+}
+
+let nombre_cliente = prompt("Ingrese su nombre: ") 
+
+let opcion = "" 
+
+while (opcion !== "n") {
+    Cuotas = prompt(nombre_cliente + " indique la cantidad de cuotas.") 
+
+    if (isNaN(Cuotas)) {
+        Cuotas = 0 
+        console.log(nombre_cliente + '  cantidad de cuotas ingresadas está mal, vuelva a intentarlo, GRACIAS. ') 
+    } else {
+        let modelo_celular = prompt(nombre_cliente + " Ingrese el modelo del celular (e12, a4, e15): ") 
+
+        if (modelo_celular === "") {
+            console.log(nombre_cliente + " El modelo del celular no puede estar vacío.") 
+        } else {
+            const celulares_encontrados = buscar(modelo_celular) 
+
+            if (celulares_encontrados.length === 0) {
+                console.log("No se encontraron celulares con el modelo " + modelo_celular) 
+                for (const celular_ of celulares) {
+                    console.log(celular_.marca + '  ' + celular_.modelo + '  precio  :   ' + celular_.precio)
+                }
+            } else {
+                for (const celular of celulares_encontrados) {
+                    console.log(nombre_cliente + " " + celular.marca + " " + celular.modelo + " - Precio de cuota " + dividir_cuotas(celular.precio, Cuotas)) 
+                }
+            }
+        }
+
+        opcion = prompt(nombre_cliente + " ¿Quieres buscar otro celular? (s/n)") 
+    }
+}
+
+console.log("Gracias por usar nuestro programa, #1 CODERHOUSE.") 
